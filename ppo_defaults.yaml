@@ -1,0 +1,11 @@
+gamma: 0.98
+clip_parameter: 0.1
+actor_lr: 0.001
+critic_lr: 0.001
+batch_size: 64
+actor_mlp_widths: [128, 128]
+critic_mlp_widths: [128, 128]
+policy_train_iterations: 80
+value_function_train_iterations: 80
+normalise_advantages: True
+trajectories_per_epoch: 20

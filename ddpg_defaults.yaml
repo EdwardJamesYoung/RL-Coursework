@@ -1,0 +1,12 @@
+gamma: 0.99
+replay_buffer_size: 100000
+learning_starts: 1000
+update_frequency: 4
+target_update_frequency: 4
+actor_lr: 0.003
+critic_lr: 0.003
+polyak_parameter: 0.995
+batch_size: 32
+actor_mlp_widths: [128, 128, 128]
+critic_mlp_widths: [128, 128, 128]
+action_noise_std: 0.1
