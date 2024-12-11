@@ -280,6 +280,6 @@ class PPOAgent(OnPolicyAgent):
             policy_objective = torch.min(clipped_term, unclipped_term).mean()
 
             # Optimization step
-            self.critic_optimiser.zero_grad()
+            self.actor_optimiser.zero_grad()
             policy_objective.backward()
-            self.critic_optimiser.step()
+            self.actor_optimiser.step()

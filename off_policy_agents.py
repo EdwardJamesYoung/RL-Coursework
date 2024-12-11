@@ -58,7 +58,10 @@ class OffPolicyAgent(ABC):
             self.replay_buffer.add(
                 current_state, action, reward, next_state, terminated
             )
-            current_state = next_state
+            if terminated or truncated:
+                current_state, info = env.reset()
+            else:
+                current_state = next_state
             step_idx += 1
 
         self.replay_buffer.start_async()
