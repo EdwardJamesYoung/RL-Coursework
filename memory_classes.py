@@ -359,10 +359,6 @@ class BatchStorage:
             "action_probs": torch.stack(action_probs).to(self.device),
         }
 
-        for field in self.additional_fields:
-            if additional_values[field]:
-                batch[field] = torch.stack(additional_values[field]).to(self.device)
-
         return batch
 
     def get_batch(self) -> Dict[str, torch.Tensor]:
